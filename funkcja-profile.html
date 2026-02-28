@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szatkoś Launcher – oddzielne profile</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif; }
+        body { background: linear-gradient(145deg, #0c0f15 0%, #1a1f2b 100%); color: #e0e6f0; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; flex: 1; }
+        .page-header { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid #9b59b6; }
+        .page-header h1 { font-size: 3rem; background: linear-gradient(135deg, #fff, #c39bd3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+        .page-header p { color: #98aec6; font-size: 1.2rem; }
+        .back-link { display: inline-block; margin-top: 20px; color: #dbb9ff; text-decoration: none; font-weight: 500; border: 1px solid #9b59b6; padding: 8px 25px; border-radius: 50px; transition: 0.2s; }
+        .back-link:hover { background: #9b59b6; color: white; }
+        .feature-content { background: rgba(20, 30, 45, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(155, 89, 182, 0.3); border-radius: 40px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .feature-content h2 { color: #dbb9ff; font-size: 2rem; margin: 40px 0 20px 0; border-left: 6px solid #9b59b6; padding-left: 20px; }
+        .feature-content h2:first-of-type { margin-top: 0; }
+        .feature-content p { margin-bottom: 15px; color: #cbd5e1; font-size: 1.1rem; }
+        .feature-content ul { margin: 15px 0 25px 30px; color: #cbd5e1; }
+        .feature-content li { margin-bottom: 10px; }
+        .feature-content .highlight { background: rgba(155, 89, 182, 0.2); padding: 2px 10px; border-radius: 20px; color: #e0b0ff; font-weight: 600; }
+        .footer { background: #070b12; padding: 40px 0 30px; text-align: center; color: #5f738c; border-top: 2px solid #9b59b6; margin-top: 60px; }
+        .footer a { color: #b397c2; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #9b59b6; }
+        @media (max-width: 700px) { .feature-content { padding: 30px 20px; } .page-header h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Oddzielne profile</h1>
+        <p>Każda rozgrywka w swoim własnym środowisku</p>
+        <a href="index.html" class="back-link">← Powrót do strony głównej</a>
+    </div>
+    <div class="feature-content">
+        <p><span class="highlight">Szatkoś Launcher</span> umożliwia tworzenie wielu w pełni niezależnych profili. Każdy profil to osobny zestaw: wersji Minecraft, modów, paczek zasobów, ustawień graficznych i zapisanych światów. Dzięki temu możesz mieć jednocześnie np.:</p>
+        <ul>
+            <li>profil do nagrywania filmów z shaderami (nowa wersja, dużo modów),</li>
+            <li>profil na serwer PvP (stara wersja, tylko niezbędne mody),</li>
+            <li>profil dla dziecka (uproszczone ustawienia, włączony tryb przyjazny),</li>
+            <li>profil testowy (snapshoty, eksperymentalne mody).</li>
+        </ul>
+        
+        <h2>Jak działają profile?</h2>
+        <p>Każdy profil posiada oddzielny katalog w systemie plików. Oznacza to, że mody zainstalowane w jednym profilu nie mieszają się z drugim, a światy są przechowywane osobno. Przełączanie między profilami to kwestia kliknięcia – launcher automatycznie przeładowuje odpowiednie ustawienia.</p>
+        
+        <h2>Co możesz skonfigurować w profilu?</h2>
+        <ul>
+            <li>Wersję Minecraft (także z Forge/Fabric).</li>
+            <li>Listę włączonych modów (z możliwością szybkiego włączania/wyłączania).</li>
+            <li>Przydzieloną pamięć RAM i argumenty Javy (indywidualnie dla profilu).</li>
+            <li>Rozdzielczość okna i inne ustawienia graficzne.</li>
+            <li>Konto (jeśli masz kilka kont Microsoft).</li>
+            <li>Ulubione serwery (każdy profil może mieć własną listę).</li>
+        </ul>
+        
+        <h2>Idealne dla rodzin i twórców</h2>
+        <p>Jeśli kilka osób korzysta z tego samego komputera, każda może mieć swój profil z własnymi zapisanymi światami i modami – bez ryzyka, że dziecko usunie ciężko zdobyte diamenty. Dla youtuberów i streamerów profile to must-have: oddzielasz wersję do nagrań od wersji do normalnej gry.</p>
+        
+        <p>Profile są w pełni eksportowalne – możesz udostępnić znajomemu plik konfiguracyjny, a on zaimportuje go do swojego launcher'a, otrzymując identyczne ustawienia.</p>
+    </div>
+    <footer class="footer">
+        <p>© 2026 Szatkoś Launcher. Projekt fanowski, niezwiązany z Mojang Studios ani Microsoft.</p>
+        <p><a href="regulamin.html">Regulamin</a> | <a href="Polityka.html">Polityka prywatności</a> | <a href="index.html">Strona główna</a></p>
+    </footer>
+</div>
+</body>
+</html>

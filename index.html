@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szatkoś Launcher – Minecraft jak nigdy dotąd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #0c0f15;
+            color: #e0e6f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* NAGŁÓWEK */
+        .hero {
+            background: linear-gradient(145deg, #141b29 0%, #1f2b3f 100%);
+            padding: 80px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 40px;
+            border-bottom: 4px solid #9b59b6;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1 1 450px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff, #c39bd3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, #9b59b6, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text .version-badge {
+            display: inline-block;
+            background: rgba(155, 89, 182, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid #9b59b6;
+            border-radius: 60px;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #dbb9ff;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #b0c6dd;
+            max-width: 550px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #9b59b6;
+            color: white;
+            font-weight: 600;
+            padding: 16px 45px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 25px rgba(155, 89, 182, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px rgba(155, 89, 182, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #9b59b6;
+            box-shadow: none;
+            color: #dbb9ff;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(155, 89, 182, 0.15);
+        }
+
+        .hero-image {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            border: 3px solid rgba(255,255,255,0.1);
+        }
+
+        /* SEKCJE */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .section-title span {
+            color: #9b59b6;
+        }
+
+        .section-sub {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #98aec6;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: #9b59b6;
+            margin: 20px auto 40px;
+            border-radius: 2px;
+        }
+
+        /* KARTY UDOGODNIEŃ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .features-grid a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .feature-card {
+            background: rgba(30, 40, 55, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(155, 89, 182, 0.2);
+            border-radius: 30px;
+            padding: 35px 25px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            border-color: #9b59b6;
+            transform: translateY(-8px);
+            background: rgba(40, 50, 70, 0.7);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #b0c6dd;
+        }
+
+        .feature-card .highlight {
+            font-weight: 700;
+            color: #dbb9ff;
+            background: rgba(155, 89, 182, 0.15);
+            padding: 2px 10px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* SEKCJA DLACZEGO LEPSZY */
+        .comparison {
+            background: #10161f;
+            border-radius: 50px;
+            padding: 60px 40px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .comp-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 30px;
+        }
+
+        .comp-item h4 {
+            font-size: 1.8rem;
+            color: #9b59b6;
+            margin-bottom: 20px;
+        }
+
+        .comp-item ul {
+            list-style: none;
+        }
+
+        .comp-item li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            text-align: left;
+        }
+
+        .comp-item li::before {
+            content: "✔";
+            color: #2ecc71;
+            position: absolute;
+            left: 0;
+        }
+
+        .comp-item .no::before {
+            content: "✘";
+            color: #e74c3c;
+        }
+
+        /* WERSJE */
+        .versions-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px 0;
+        }
+
+        .version-chip {
+            background: #1e293b;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: white;
+            border: 1px solid #334155;
+            transition: 0.2s;
+        }
+
+        .version-chip:hover {
+            border-color: #9b59b6;
+            transform: scale(1.05);
+            background: #2d3a4f;
+        }
+
+        .version-chip.special {
+            background: #9b59b6;
+            border-color: #c39bd3;
+            box-shadow: 0 0 15px #9b59b6;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: linear-gradient(145deg, #1a2332, #101826);
+            border-radius: 60px;
+            padding: 80px 40px;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: #a0b8d0;
+            margin-bottom: 40px;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            background: #9b59b6;
+            color: white;
+            padding: 20px 45px;
+            border-radius: 80px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: #8e44ad;
+            transform: scale(1.05);
+        }
+
+        /* STOPKA */
+        .footer {
+            background: #070b12;
+            padding: 50px 0 30px;
+            text-align: center;
+            color: #5f738c;
+            border-top: 2px solid #9b59b6;
+        }
+
+        .footer a {
+            color: #b397c2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #9b59b6;
+        }
+
+        @media (max-width: 900px) {
+            .hero-text h1 { font-size: 2.8rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="version-badge">
+                    ⚡ Wspiera wszystkie wersje 1.0 ➔ 1.21.11
+                </div>
+                <h1><span>Szatkoś</span> Launcher</h1>
+                <p>Najszybszy, najbardziej elastyczny launcher Minecraft. Żaden inny nie daje Ci takiej wolności wyboru wersji i modów.</p>
+                <div>
+                    <a href="#features" class="btn">Poznaj moc</a>
+                    <a href="#download" class="btn btn-outline">Pobierz</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Miejsce na grafikę poglądową launcher'a -->
+                <img src="Szadkos_Lancher.jpg" alt="Szatkoś Launcher">
+            </div>
+        </div>
+    </div>
+
+    <!-- UDOGODNIENIA / FUNKCJE -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Co czyni <span>Szatkosia</span> wyjątkowym?</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Zobacz, jakie udogodnienia otrzymujesz – rzeczy, których próżno szukać u konkurencji.</p>
+
+            <div class="features-grid">
+                <a href="funkcja-archiwum.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Pełne archiwum wersji</h3>
+                        <p>Od kultowej 1.0 po najświeższą 1.21.11 – każda wersja dostępna jednym kliknięciem. Automatyczne pobieranie, instalacja i optymalizacja.</p>
+                        <span class="highlight">wszystkie wersje 1.0–1.21.11</span>
+                    </div>
+                </a>
+                <a href="funkcja-mody.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧩</div>
+                        <h3>Menażer modów nowej generacji</h3>
+                        <p>Instaluj, aktualizuj i zarządzaj modami z poziomu launcher'a. Kompatybilność z Forge, Fabric, Quilt i wieloma API.</p>
+                    </div>
+                </a>
+                <a href="funkcja-optymalizacja.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Optymalizacja RAM i wydajności</h3>
+                        <p>Inteligentne przydzielanie pamięci, czyszczenie cache i optymalizacja argumentów Javy – gra działa płynniej niż kiedykolwiek.</p>
+                    </div>
+                </a>
+                <a href="funkcja-serwery.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Lista serwerów na żywo</h3>
+                        <p>Obserwuj ulubione serwery, ping, liczbę graczy i dołączaj bez wpisywania adresu – wszystko w jednym miejscu.</p>
+                    </div>
+                </a>
+                <a href="funkcja-profile.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Oddzielne profile</h3>
+                        <p>Twórz profile dla różnych wersji, paczek modów lub ustawień – idealne dla twórców contentu i testerów.</p>
+                    </div>
+                </a>
+                <a href="funkcja-bezpieczeństwo.html">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Bezpieczeństwo i open source</h3>
+                        <p>Kod launcher'a jest jawny, regularnie audytowany. Zero reklam, złośliwego oprogramowania i ukrytych opłat.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DLACZEGO LEPSZY OD INNYCH? -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="comparison">
+                <h2 class="section-title" style="margin-bottom: 20px;">Szatkoś vs konkurencja</h2>
+                <div class="divider"></div>
+                <p class="section-sub">Nie wierzysz? Sprawdź sam, co oferujemy, a czego brakuje innym.</p>
+
+                <div class="comparison-grid">
+                    <div class="comp-item">
+                        <h4>Szatkoś</h4>
+                        <ul>
+                            <li>Wszystkie wersje 1.0–1.21.11</li>
+                            <li>Wbudowany menedżer modów</li>
+                            <li>Profilowanie RAM + auto-optymalizacja</li>
+                            <li>Lista serwerów z pingiem</li>
+                            <li>Open source / brak telemetrii</li>
+                            <li>Wsparcie dla Forge/Fabric/Quilt</li>
+                        </ul>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Zwykłe launchery</h4>
+                        <ul>
+                            <li>Tylko ostatnie wersje</li>
+                            <li>Brak menedżera modów</li>
+                            <li>Podstawowe ustawienia RAM</li>
+                            <li class="no">Brak listy serwerów</li>
+                            <li class="no">Zamknięty kod / zbieranie danych</li>
+                            <li>Tylko Forge (częściowo)</li>
+                        </ul>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Oficjalny launcher</h4>
+                        <ul>
+                            <li>Ograniczone wersje (brak starszych)</li>
+                            <li class="no">Brak modów</li>
+                            <li>Brak optymalizacji</li>
+                            <li class="no">Brak listy serwerów</li>
+                            <li class="no">Telemetria Microsoft</li>
+                            <li class="no">Tylko vanilla</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WSZYSTKIE WERSJE - WIZUALIZACJA -->
+    <section>
+        <div class="container">
+            <h2 class="section-title"><span>1.0</span> do <span>1.21.11</span> – wszystko w zasięgu</h2>
+            <div class="divider"></div>
+            <p class="section-sub">Nie ważne, czy chcesz powspominać stare czasy, czy grać w najnowszej wersji – Szatkoś Launcher to jedyne narzędzie, którego potrzebujesz.</p>
+            <div class="versions-showcase">
+                <span class="version-chip">1.0</span>
+                <span class="version-chip">1.2.5</span>
+                <span class="version-chip">1.5.2</span>
+                <span class="version-chip">1.6.4</span>
+                <span class="version-chip">1.7.10</span>
+                <span class="version-chip">1.8.9</span>
+                <span class="version-chip">1.12.2</span>
+                <span class="version-chip">1.16.5</span>
+                <span class="version-chip">1.18.2</span>
+                <span class="version-chip">1.19.4</span>
+                <span class="version-chip">1.20.4</span>
+                <span class="version-chip special">1.21.11</span>
+                <span class="version-chip">… i każda pomiędzy</span>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #98aec6;">Wszystkie wersje są pobierane z oficjalnych źródeł i weryfikowane.</p>
+        </div>
+    </section>
+
+    <!-- POBRANIE / CTA -->
+    <section id="download">
+        <div class="container">
+            <div class="cta">
+                <h2>Przejmij kontrolę nad Minecraft</h2>
+                <p>Dołącz do tysięcy zadowolonych graczy. Pobierz Szatkoś Launcher i odkryj wolność, jaką daje dostęp do każdej wersji gry.</p>
+                <div class="download-buttons">
+                    <a href="pobieranie.html" class="download-btn">
+                        <span>🪟</span> Windows (x64)
+                    </a>
+                    <a href="pobieranie.html" class="download-btn">
+                        <span>🍎</span> macOS (Intel/M1+)
+                    </a>
+                    <a href="pobieranie.html" class="download-btn">
+                        <span>🐧</span> Linux (AppImage)
+                    </a>
+                </div>
+                <p style="margin-top: 40px; color: #889fb5;">Wersja: 0.0.2 (wydanie stabilne) | 27 lutego 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STOPKA -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Szatkoś Launcher. Projekt fanowski, niezwiązany z Mojang Studios ani Microsoft.</p>
+            <p>
+                <a href="regulamin.html">Regulamin</a> |
+                <a href="Polityka.html">Polityka prywatności</a> |
+                <a href="#">GitHub</a> |
+                <a href="#">Discord</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    // Płynne przewijanie do sekcji
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Obsługa kliknięć w przyciski wersji
+    document.querySelectorAll('.version-chip').forEach(chip => {
+        chip.addEventListener('click', function() {
+            // Usuń klasę 'special' ze wszystkich elementów version-chip
+            document.querySelectorAll('.version-chip').forEach(c => c.classList.remove('special'));
+            // Dodaj klasę 'special' do klikniętego elementu
+            this.classList.add('special');
+        });
+    });
+</script>
+</body>
+</html>

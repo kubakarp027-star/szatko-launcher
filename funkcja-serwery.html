@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szatkoś Launcher – lista serwerów na żywo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif; }
+        body { background: linear-gradient(145deg, #0c0f15 0%, #1a1f2b 100%); color: #e0e6f0; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; flex: 1; }
+        .page-header { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid #9b59b6; }
+        .page-header h1 { font-size: 3rem; background: linear-gradient(135deg, #fff, #c39bd3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+        .page-header p { color: #98aec6; font-size: 1.2rem; }
+        .back-link { display: inline-block; margin-top: 20px; color: #dbb9ff; text-decoration: none; font-weight: 500; border: 1px solid #9b59b6; padding: 8px 25px; border-radius: 50px; transition: 0.2s; }
+        .back-link:hover { background: #9b59b6; color: white; }
+        .feature-content { background: rgba(20, 30, 45, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(155, 89, 182, 0.3); border-radius: 40px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .feature-content h2 { color: #dbb9ff; font-size: 2rem; margin: 40px 0 20px 0; border-left: 6px solid #9b59b6; padding-left: 20px; }
+        .feature-content h2:first-of-type { margin-top: 0; }
+        .feature-content p { margin-bottom: 15px; color: #cbd5e1; font-size: 1.1rem; }
+        .feature-content ul { margin: 15px 0 25px 30px; color: #cbd5e1; }
+        .feature-content li { margin-bottom: 10px; }
+        .feature-content .highlight { background: rgba(155, 89, 182, 0.2); padding: 2px 10px; border-radius: 20px; color: #e0b0ff; font-weight: 600; }
+        .footer { background: #070b12; padding: 40px 0 30px; text-align: center; color: #5f738c; border-top: 2px solid #9b59b6; margin-top: 60px; }
+        .footer a { color: #b397c2; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #9b59b6; }
+        @media (max-width: 700px) { .feature-content { padding: 30px 20px; } .page-header h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Lista serwerów na żywo</h1>
+        <p>Znajdź idealny serwer bez opuszczania launcher'a</p>
+        <a href="index.html" class="back-link">← Powrót do strony głównej</a>
+    </div>
+    <div class="feature-content">
+        <p><span class="highlight">Szatkoś Launcher</span> posiada wbudowaną, dynamiczną listę serwerów, która pokazuje aktualny status tysięcy serwerów z całego świata. Zapomnij o stronach z listami IP – wszystko masz pod ręką.</p>
+        
+        <h2>Funkcje listy serwerów</h2>
+        <ul>
+            <li><strong>Ping na żywo:</strong> Dla każdego serwera widzisz opóźnienie (w ms), liczbę graczy online oraz maksymalną pojemność.</li>
+            <li><strong>Motd (opis):</strong> Kolorowy opis serwera renderowany tak, jak w grze.</li>
+            <li><strong>Wersja:</strong> Informacja, jaka wersja Minecraft jest wymagana – jeśli masz ją zainstalowaną, możesz dołączyć od razu.</li>
+            <li><strong>Ulubione:</strong> Oznacz serwery gwiazdką, by mieć do nich szybki dostęp w osobnej zakładce.</li>
+            <li><strong>Dodawanie własnych serwerów:</strong> Masz prywatny serwer? Dodaj go ręcznie (IP, port, nazwa). Launcher będzie go monitorował tak samo, jak te z listy.</li>
+        </ul>
+        
+        <h2>Jak dołączyć?</h2>
+        <p>Kliknij na wybrany serwer, a następnie przycisk „Dołącz”. Launcher automatycznie uruchomi Minecraft z odpowiednią wersją (jeśli nie masz jej zainstalowanej – pobierze ją w tle) i połączy się z serwerem. Cały proces zajmuje kilka sekund.</p>
+        
+        <h2>Kategoryzacja i filtry</h2>
+        <p>Serwery możesz sortować według trybu gry (Survival, Creative, PvP, Skyblock itp.), popularności, wersji czy lokalizacji. Dzięki temu szybko znajdziesz społeczność, która Ci odpowiada.</p>
+        
+        <p style="margin-top: 30px;">To narzędzie docenią szczególnie gracze, którzy lubią zmieniać serwery – oszczędza mnóstwo czasu i pozwala odkrywać nowe miejsca bez wychodzenia z gry.</p>
+    </div>
+    <footer class="footer">
+        <p>© 2026 Szatkoś Launcher. Projekt fanowski, niezwiązany z Mojang Studios ani Microsoft.</p>
+        <p><a href="regulamin.html">Regulamin</a> | <a href="Polityka.html">Polityka prywatności</a> | <a href="index.html">Strona główna</a></p>
+    </footer>
+</div>
+</body>
+</html>

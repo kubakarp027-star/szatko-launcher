@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szatkoś Launcher – bezpieczeństwo i open source</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif; }
+        body { background: linear-gradient(145deg, #0c0f15 0%, #1a1f2b 100%); color: #e0e6f0; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; flex: 1; }
+        .page-header { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid #9b59b6; }
+        .page-header h1 { font-size: 3rem; background: linear-gradient(135deg, #fff, #c39bd3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+        .page-header p { color: #98aec6; font-size: 1.2rem; }
+        .back-link { display: inline-block; margin-top: 20px; color: #dbb9ff; text-decoration: none; font-weight: 500; border: 1px solid #9b59b6; padding: 8px 25px; border-radius: 50px; transition: 0.2s; }
+        .back-link:hover { background: #9b59b6; color: white; }
+        .feature-content { background: rgba(20, 30, 45, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(155, 89, 182, 0.3); border-radius: 40px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .feature-content h2 { color: #dbb9ff; font-size: 2rem; margin: 40px 0 20px 0; border-left: 6px solid #9b59b6; padding-left: 20px; }
+        .feature-content h2:first-of-type { margin-top: 0; }
+        .feature-content p { margin-bottom: 15px; color: #cbd5e1; font-size: 1.1rem; }
+        .feature-content ul { margin: 15px 0 25px 30px; color: #cbd5e1; }
+        .feature-content li { margin-bottom: 10px; }
+        .feature-content .highlight { background: rgba(155, 89, 182, 0.2); padding: 2px 10px; border-radius: 20px; color: #e0b0ff; font-weight: 600; }
+        .footer { background: #070b12; padding: 40px 0 30px; text-align: center; color: #5f738c; border-top: 2px solid #9b59b6; margin-top: 60px; }
+        .footer a { color: #b397c2; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #9b59b6; }
+        @media (max-width: 700px) { .feature-content { padding: 30px 20px; } .page-header h1 { font-size: 2.2rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1> Bezpieczeństwo i open source</h1>
+        <p>Twój spokój jest dla nas najważniejszy</p>
+        <a href="index.html" class="back-link">← Powrót do strony głównej</a>
+    </div>
+    <div class="feature-content">
+        <p><span class="highlight">Szatkoś Launcher</span> to projekt w pełni otwarty (open source) – każdy może przejrzeć kod źródłowy, sprawdzić, co dokładnie dzieje się na jego komputerze, a nawet zgłosić własne poprawki. To gwarancja, że nie znajdziesz tu żadnego złośliwego oprogramowania ani ukrytych funkcji szpiegujących.</p>
+        
+        <h2>Co to oznacza w praktyce?</h2>
+        <ul>
+            <li><strong>Brak adware i cryptominerów</strong> – nie zarabiamy na Twoim procesorze ani na wyświetlaniu reklam.</li>
+            <li><strong>Brak telemetrii</strong> – domyślnie nie zbieramy żadnych danych o Tobie. Ewentualne anonimowe statystyki (które pomagają nam ulepszać program) są zbierane tylko po wyraźnej zgodzie.</li>
+            <li><strong>Regularne audyty społeczności</strong> – kod jest publiczny, więc każdy może sprawdzić, czy nie ma w nim luk bezpieczeństwa.</li>
+            <li><strong>Szybkie łatki</strong> – jeśli zostanie odkryta jakaś podatność, społeczność może szybko zaproponować poprawkę.</li>
+        </ul>
+        
+        <h2>Bezpieczeństwo danych logowania</h2>
+        <p>Launcher nigdy nie przechowuje Twojego hasła do konta Microsoft/Mojang. Proces logowania odbywa się przez przeglądarkę (OAuth), a launcher otrzymuje jedynie tymczasowy token, który pozwala uruchomić grę. Token jest przechowywany lokalnie i szyfrowany.</p>
+        
+        <h2>Open source – jak możesz pomóc?</h2>
+        <p>Kod źródłowy dostępny jest na <span class="highlight">GitHubie</span>. Możesz zgłaszać błędy, proponować nowe funkcje, a jeśli znasz Javę/Pythona – tworzyć własne rozszerzenia. Licencja (MIT) pozwala na dowolne modyfikacje i rozpowszechnianie.</p>
+        
+        <h2>Niezależność i transparentność</h2>
+        <p>Szatkoś Launcher nie jest powiązany z żadną korporacją. Nie sprzedajemy Twoich danych, nie wyświetlamy reklam i nie promujemy płatnych serwerów. Jesteśmy tu dla społeczności i dzięki społeczności.</p>
+        
+        <p style="margin-top: 30px;">Jeśli cenisz sobie prywatność i chcesz mieć pewność, że używasz czystego narzędzia – Szatkoś jest właśnie dla Ciebie.</p>
+    </div>
+    <footer class="footer">
+        <p>© 2026 Szatkoś Launcher. Projekt fanowski, niezwiązany z Mojang Studios ani Microsoft.</p>
+        <p><a href="regulamin.html">Regulamin</a> | <a href="Polityka.html">Polityka prywatności</a> | <a href="index.html">Strona główna</a></p>
+    </footer>
+</div>
+</body>
+</html>
